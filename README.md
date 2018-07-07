@@ -1,9 +1,11 @@
 # Kubernetes Istio Demo
 
-THIS IS WORK IN PROGRESS UNTIL IT ACTUALLY WORKS ;)
-
 This Istio documentation is fantastic, so this is really just taking the 
 most useful bits to get something up and running as quick as possible.
+
+## Issues
+
+There's a couple of crashlooping pods at the moment. Looking into this.
 
 ## Pre-requisites
 
@@ -25,17 +27,15 @@ kubectl apply -f ./manifests/istio-demo.yaml
 
 https://istio.io/docs/setup/kubernetes/sidecar-injection/#automatic-sidecar-injection
 
-
-```
-kubectl apply -f <(istioctl kube-inject -f samples/bookinfo/kube/bookinfo.yaml)
-```
+This sounds ideal, otherwise you will need to use `istioctl` to inject the sidecar
+into your deployment manifests (sounds a bit ugly).
 
 ## Install example app
 
 https://istio.io/docs/guides/bookinfo/
 
 
-Install an example BookInfo application into the `default` namespace.
+Install the example BookInfo application into the `default` namespace.
 
 
 If you don't have automatic side-car injection, run:
