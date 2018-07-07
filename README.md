@@ -8,10 +8,14 @@ https://istio.io/docs/setup/kubernetes/
 
 ## Issues
 
-I think these are mostly resolved, but I was having issues with:
+Currently hitting this issue:
 
-- CrashBackoffs when using the istio-demo manifest (seems better with the Helm versions)
-- Resource issues (I gave my cluster more RAM)
+```
+[2018-07-07 12:24:22.173][53][critical][main] external/envoy/source/server/server.cc:77] error initializing configuration '/etc/istio/proxy/envoy-rev0.json': malformed IP address: istio-statsd-prom-bridge.istio-system
+[2018-07-07 12:24:22.173][53][info][main] external/envoy/source/server/server.cc:435] exiting
+```
+
+See: https://github.com/istio/istio/issues/5379
 
 ## Pre-requisites
 
@@ -75,6 +79,13 @@ Else:
 ```
 kubectl apply -f ./manifests/example-app/bookinfo.yaml
 ```
+
+### Request Routing 
+
+I've not added any routing-rules here, but there's lots to play around with in the samples provided by istio.
+
+https://istio.io/docs/tasks/traffic-management/request-routing/
+
 
 ## Accessing the cool stuff
 
