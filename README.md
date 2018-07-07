@@ -8,7 +8,10 @@ https://istio.io/docs/setup/kubernetes/
 
 ## Issues
 
-There's a couple of crashlooping pods at the moment. Looking into this.
+I think these are mostly resolved, but I was having issues with:
+
+- CrashBackoffs when using the istio-demo manifest (seems better with the Helm versions)
+- Resource issues (I gave my cluster more RAM)
 
 ## Pre-requisites
 
