@@ -42,6 +42,8 @@ helm template install/kubernetes/helm/istio --name istio \
     --set servicegraph.enabled=true > istio.yaml
 ```
 
+The helm charts are available in the downloaded files as part of `getLatestIstio`
+
 ## Configure automatic side-car injection (optional)
 
 https://istio.io/docs/setup/kubernetes/sidecar-injection/#automatic-sidecar-injection
