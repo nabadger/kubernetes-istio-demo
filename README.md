@@ -75,6 +75,13 @@ kubectl apply -f ./manifests/example-app/bookinfo.yaml
 
 The following examples use `kubectl port-forward` which enables you to access running services via localhost on your browser (instead of settign up load-balancer/dns/etc)
 
+
+### The BookApp
+
+```
+kubectl port-forward $(kubectl get pod -l app=productpage -o jsonpath='{.items[0].metadata.name}') 9080:9080
+```
+
 ### Tracing 
 
 https://istio.io/docs/tasks/telemetry/distributed-tracing/
