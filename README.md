@@ -8,7 +8,7 @@ https://istio.io/docs/setup/kubernetes/
 
 ## Issues
 
-Currently hitting this issue:
+Sometimes hitting this issue:
 
 ```
 [2018-07-07 12:24:22.173][53][critical][main] external/envoy/source/server/server.cc:77] error initializing configuration '/etc/istio/proxy/envoy-rev0.json': malformed IP address: istio-statsd-prom-bridge.istio-system
@@ -123,3 +123,10 @@ kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=pr
 ```
 
 
+## Demo Manifests
+
+There's a demo walkthrough under `./manifests/demo` which you can try in-order.
+
+It uses the BookApp - so after each `istioctl create|replace ...` command, just reload your BookApp page to see the changes.
+
+The steps are pretty self-explanatory.
